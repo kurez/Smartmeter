@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\account;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Meter;
 
-class appController extends Controller
+class AppController extends Controller
 {
    //dashboard
    public function dashboard(){
