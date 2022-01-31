@@ -42,7 +42,7 @@
                            <li><span>Active Meters:</span>3</li>
                         </ul>
                         <a href="#" class="btn btn-primary"><em class="fas fa-eye mr-3"></em>View Meters</a>
-                        <a href="{{ route('add-meter') }}" class="btn btn-primary"><em class="fas fa-plus mr-3"></em>Add Meter</a>
+                        <a href="{{ url('/add-meter') }}" class="btn btn-primary"><em class="fas fa-plus mr-3"></em>Add Meter</a>
                      </div>
                   </div>
                </div>
