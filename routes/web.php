@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\account\AppController;
+use App\Http\Controllers\MeterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +20,10 @@ Route::get('/', 'Auth\LoginController@showLoginForm')->name('home.page');
 
 Auth::routes();
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('home.page');
-Route::get('/dashboard', 'account\AppController@dashboard')->name('dashboard');
-Route::get('/meters', 'MeterController@meters')->name('meters');
-Route::get('/add-meter', 'MeterController@addMeter')->name('add-meter');
-Route::post('/submit-meter', 'MeterController@submitMeter')->name('submit-meter');
+Route::get('/dashboard', [AppController::class, 'dashboard'])->name('dashboard');
+Route::get('/meters', [MeterController::class, 'meters'])->name('meters');
+Route::get('/add-meter', [MeterController::class, 'addMeter'])->name('add-meter');
+Route::post('/submit-meter', [MeterController::class, 'submitMeter'])->name('submit-meter');
 
 
 
