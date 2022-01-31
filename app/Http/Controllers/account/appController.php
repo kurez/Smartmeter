@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\account;
 
 use App\Http\Controllers\Controller;
-<<<<<<< HEAD
-=======
 use App\Models\Meter;
->>>>>>> 64bca79cc856e3088588e41e5c60792a9c31f2e6
 use Illuminate\Http\Request;
 
 class appController extends Controller
@@ -15,8 +12,6 @@ class appController extends Controller
    public function dashboard(){
       return view('account.dashboard');
    }
-<<<<<<< HEAD
-=======
 
    // Add Meter
    public function addMeter() {
@@ -39,5 +34,4 @@ class appController extends Controller
 
       return back()->with('success', 'Meter added successfully');
    }
->>>>>>> 64bca79cc856e3088588e41e5c60792a9c31f2e6
 }
