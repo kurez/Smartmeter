@@ -100,4 +100,8 @@
     N.length > 0 && N.each(function() { e(this).validate() });
     var E = e(".wizard-wrap").show();
     E.steps({ headerTag: ".wizard-head", bodyTag: ".wizard-content", labels: { finish: "Submit", next: "Next", previous: "Prev", loading: "Loading ..." }, onStepChanging: function(e, t, a) { return t > a || (t < a && (E.find(".body:eq(" + a + ") label.error").remove(), E.find(".body:eq(" + a + ") .error").removeClass("error")), E.validate().settings.ignore = ":disabled,:hidden", E.valid()) }, onFinishing: function(e, t) { return E.validate().settings.ignore = ":disabled", E.valid() }, onFinished: function(e, t) { window.location.href = "thank-you.html" } }).validate({ errorPlacement: function(e, t) { t.after(e) } })
+<<<<<<< HEAD
 }(jQuery);
+=======
+}(jQuery);
+>>>>>>> 64bca79cc856e3088588e41e5c60792a9c31f2e6

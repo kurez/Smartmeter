@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title','Dashboard')
 @section('content')
+<<<<<<< HEAD
+=======
+@include('partials.add-meter-modal')
+>>>>>>> 64bca79cc856e3088588e41e5c60792a9c31f2e6
    <div class="row">
       <div class="col-lg-4">
          <div class="token-statistics card card-token height-auto">
@@ -41,6 +45,10 @@
                            <li><span>Active Meters:</span>3</li>
                         </ul>
                         <a href="#" class="btn btn-primary"><em class="fas fa-eye mr-3"></em>View Meters</a>
+<<<<<<< HEAD
+=======
+                        <a href="{{ route('add-meter') }}" class="btn btn-primary"><em class="fas fa-plus mr-3"></em>Add Meter</a>
+>>>>>>> 64bca79cc856e3088588e41e5c60792a9c31f2e6
                      </div>
                   </div>
                </div>

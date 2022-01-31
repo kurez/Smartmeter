@@ -35,5 +35,9 @@
       <!-- JavaScript (include all script here) -->
       <script src="{!! asset('assets/js/jquery.bundle.js') !!}"></script>
       <script src="{!! asset('assets/js/script.js') !!}"></script>
+<<<<<<< HEAD
+=======
+      @stack('scripts')
+>>>>>>> 64bca79cc856e3088588e41e5c60792a9c31f2e6
    </body>
 </html>
