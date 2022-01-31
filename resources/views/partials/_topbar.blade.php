@@ -42,7 +42,7 @@
       <div class="container">
          <div class="navbar-innr">
             <ul class="navbar-menu">
-               <li><a href="{!! url('/') !!}"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
+               <li><a href="{!! route('dashboard') !!}"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
                <li><a href="{{ route('meters') }}"><em class="ikon ikon-coins"></em> Meters </a></li>
                <li><a href="#"><em class="ikon ikon-transactions"></em> Transactions</a></li>
                <li><a href="#"><em class="ikon ikon-exchange"></em> Settings</a></li>

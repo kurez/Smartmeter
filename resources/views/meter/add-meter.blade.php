@@ -26,6 +26,11 @@
          <x-error for="email"></x-error>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
+         <label for="f_name">Meter Number</label>
+         <input id="token-base-amount" class="input-bordered input-with-hint" name="meter_number" value="{{ old('meter_number') }}" type="text">
+         <x-error for="meter_number"></x-error>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
          <label for="f_name">IMEI</label>
          <input id="token-base-amount" class="input-bordered input-with-hint" name="imei" value="{{ old('imei') }}" type="text">
          <x-error for="imei"></x-error>

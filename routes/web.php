@@ -18,10 +18,10 @@ Route::get('/', 'Auth\LoginController@showLoginForm')->name('home.page');
 
 Auth::routes();
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('home.page');
-Route::get('/dashboard', 'account\appController@dashboard')->name('dashboard');
-Route::get('/meters', 'account\appController@meters')->name('meters');
-Route::get('/add-meter', 'account\appController@addMeter')->name('add-meter');
-Route::post('/submit-meter', 'account\appController@submitMeter')->name('submit-meter');
+Route::get('/dashboard', 'account\AppController@dashboard')->name('dashboard');
+Route::get('/meters', 'MeterController@meters')->name('meters');
+Route::get('/add-meter', 'MeterController@addMeter')->name('add-meter');
+Route::post('/submit-meter', 'MeterController@submitMeter')->name('submit-meter');
 
 
 

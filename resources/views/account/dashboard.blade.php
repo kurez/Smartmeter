@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title','Dashboard')
 @section('content')
-@include('partials.add-meter-modal')
    <div class="row">
       <div class="col-lg-4">
          <div class="token-statistics card card-token height-auto">
@@ -38,7 +37,7 @@
                   <div class="token-info bdr-tl">
                      <div>
                         <ul class="token-info-list">
-                           <li><span>Total Meters:</span>{{ $meters->count() }}</li>
+                           <li><span>Total Meters:</span>{{ $meters }}</li>
                            <li><span>Active Meters:</span>0</li>
                         </ul>
                         <a href="#" class="btn btn-primary"><em class="fas fa-eye mr-3"></em>View Meters</a>

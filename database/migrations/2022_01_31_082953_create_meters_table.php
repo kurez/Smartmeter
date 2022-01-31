@@ -19,6 +19,7 @@ class CreateMetersTable extends Migration
             $table->string('l_name');
             $table->string('phone_number');
             $table->string('email');
+            $table->string('meter_number');
             $table->text('imei');
             $table->text('iccid');
             $table->text('address');
