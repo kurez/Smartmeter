@@ -8,7 +8,7 @@ use App\Rules\PhoneNumber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class appController extends Controller
+class AppController extends Controller
 {
    //dashboard
    public function dashboard(){
