@@ -35,5 +35,6 @@
       <!-- JavaScript (include all script here) -->
       <script src="{!! asset('assets/js/jquery.bundle.js') !!}"></script>
       <script src="{!! asset('assets/js/script.js') !!}"></script>
+      @stack('scripts')
    </body>
 </html>
