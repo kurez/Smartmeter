@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\account\AppController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\MeterController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('smartmeter', 'Auth\LoginController@showLoginForm')->name('smartmeter.page');
-Route::get('/', 'Auth\LoginController@showLoginForm')->name('home.page');
+Route::get('smartmeter', [LoginController::class, 'showLoginForm'])->name('smartmeter.page');
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('home.page');
 
 Auth::routes();
-Route::get('/', 'Auth\LoginController@showLoginForm')->name('home.page');
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('home.page');
 Route::get('/dashboard', [AppController::class, 'dashboard'])->name('dashboard');
 Route::get('/meters', [MeterController::class, 'meters'])->name('meters');
 Route::get('/add-meter', [MeterController::class, 'addMeter'])->name('add-meter');
