@@ -38,8 +38,8 @@
                   <div class="token-info bdr-tl">
                      <div>
                         <ul class="token-info-list">
-                           <li><span>Total Meters:</span>5</li>
-                           <li><span>Active Meters:</span>3</li>
+                           <li><span>Total Meters:</span>{{ $meters->count() }}</li>
+                           <li><span>Active Meters:</span>0</li>
                         </ul>
                         <a href="#" class="btn btn-primary"><em class="fas fa-eye mr-3"></em>View Meters</a>
                         <a href="{{ url('/add-meter') }}" class="btn btn-primary"><em class="fas fa-plus mr-3"></em>Add Meter</a>

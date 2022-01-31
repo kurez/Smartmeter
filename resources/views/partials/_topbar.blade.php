@@ -43,9 +43,9 @@
          <div class="navbar-innr">
             <ul class="navbar-menu">
                <li><a href="{!! url('/') !!}"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
-               <li><a href="#"><em class="ikon ikon-coins"></em> Meters </a></li>
+               <li><a href="{{ route('meters') }}"><em class="ikon ikon-coins"></em> Meters </a></li>
                <li><a href="#"><em class="ikon ikon-transactions"></em> Transactions</a></li>
-               <li><a href=#"><em class="ikon ikon-exchange"></em> Settings</a></li>
+               <li><a href="#"><em class="ikon ikon-exchange"></em> Settings</a></li>
                {{-- <li class="has-dropdown page-links-all">
                   <a class="drop-toggle" href="#"><em class="ikon ikon-exchange"></em> Pages</a>
                   <ul class="navbar-dropdown">
