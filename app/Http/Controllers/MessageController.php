@@ -9,7 +9,13 @@ class MessageController extends Controller
 {
    public function addMessage(Request $request)
    {
-      $message = Message::create($request->all());
+      $message = Message::create([
+         'version' => $request->version,
+         'imei' => $request->imei,
+         'iccid' => $request->iccid,
+         'address' => $request->address,
+         'signal' => $request->signal
+      ]);
 
       if ($message) {
          return response()->json(['message' => $message, 'status' => 'Message saved successfully'], 200);
