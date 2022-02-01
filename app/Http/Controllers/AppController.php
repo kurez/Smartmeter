@@ -12,4 +12,9 @@ class AppController extends Controller
       $meters = Meter::count();
       return view('account.dashboard', compact('meters'));
    }
+
+   // Transactions
+   public function transactions() {
+      return view('transactions.index');
+   }
 }

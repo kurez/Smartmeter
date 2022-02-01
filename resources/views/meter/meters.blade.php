@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Meters')
 @section('content')
+<a href="{{ url('/add-meter') }}" class="btn btn-primary mb-2"><em class="fas fa-plus mr-3"></em>Add Meter</a>
 <div class="token-transaction card card-full-height">
    <div class="card-innr">
       <div class="card-head has-aside">

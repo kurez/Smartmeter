@@ -26,3 +26,6 @@ Route::get('/dashboard', [AppController::class, 'dashboard'])->name('dashboard')
 Route::get('/meters', [MeterController::class, 'meters'])->name('meters');
 Route::get('/add-meter', [MeterController::class, 'addMeter'])->name('add-meter');
 Route::post('/submit-meter', [MeterController::class, 'submitMeter'])->name('submit-meter');
+
+// Transactions
+Route::get('/transactions', [AppController::class, 'transactions'])->name('transactions.all');

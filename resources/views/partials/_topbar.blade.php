@@ -25,7 +25,7 @@
                         <div class="user-status-balance">403 TP</div>
                      </div>
                      <ul class="user-links">
-                        <li><a href=#"><i class="ti ti-id-badge"></i>My Profile</a></li>
+                        <li><a href="#"><i class="ti ti-id-badge"></i>My Profile</a></li>
                         <li><a href="#"><i class="ti ti-eye"></i>Activity</a></li>
                      </ul>
                      <ul class="user-links bg-light">
@@ -44,7 +44,7 @@
             <ul class="navbar-menu">
                <li><a href="{!! route('dashboard') !!}"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
                <li><a href="{{ route('meters') }}"><em class="ikon ikon-coins"></em> Meters </a></li>
-               <li><a href="#"><em class="ikon ikon-transactions"></em> Transactions</a></li>
+               <li><a href="{{ route('transactions.all') }}"><em class="ikon ikon-transactions"></em> Transactions</a></li>
                <li><a href="#"><em class="ikon ikon-exchange"></em> Settings</a></li>
                {{-- <li class="has-dropdown page-links-all">
                   <a class="drop-toggle" href="#"><em class="ikon ikon-exchange"></em> Pages</a>
