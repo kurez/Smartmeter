@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMetersTable extends Migration
+class AddBalanceToMetersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateMetersTable extends Migration
      */
     public function up()
     {
-        Schema::create('meters', function (Blueprint $table) {
-            $table->id();
-            $table->string('meter_number');
-            $table->text('imei');
-            $table->text('iccid');
-            $table->text('address');
-            $table->timestamps();
+        Schema::table('meters', function (Blueprint $table) {
+           $table->string('mode')->nullable();
+            $table->bigInteger('balance')->default(0)->nullable();
         });
     }
 
@@ -30,6 +26,8 @@ class CreateMetersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meters');
+        Schema::table('meters', function (Blueprint $table) {
+            //
+        });
     }
 }

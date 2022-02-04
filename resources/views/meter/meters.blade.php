@@ -30,7 +30,9 @@
                   <td><span><span class="lead">{{ $meter->iccid }}</span></span></td>
                   <td><span class="sub sub-s2">{{ $meter->address }}</span></td>
                   <td class="tnx-type">
-                     <span class="tnx-type-md badge badge-outline badge-warning badge-md">View</span>
+                     <span class="tnx-type-md badge badge-outline badge-warning badge-md">
+                        <a href="{{ route('meter', $meter) }}">View</a>
+                     </span>
                      <span class="tnx-type-sm badge badge-sq badge-outline badge-warning badge-md">v</span>
                   </td>
                </tr><!-- tr -->

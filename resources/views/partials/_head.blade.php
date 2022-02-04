@@ -11,4 +11,5 @@
    <link rel="stylesheet" href="{!! asset('assets/css/vendor.bundle.css') !!}">
    <!-- Custom styles for this template -->
    <link rel="stylesheet" href="{!! asset('assets/css/style.css') !!}" id="layoutstyle">
+   @livewireStyles
 </head>

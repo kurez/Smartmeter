@@ -24,6 +24,7 @@ Auth::routes();
 Route::get('/', [LoginController::class, 'showLoginForm'])->name('home.page');
 Route::get('/dashboard', [AppController::class, 'dashboard'])->name('dashboard');
 Route::get('/meters', [MeterController::class, 'meters'])->name('meters');
+Route::get('/meter/{meter}', [MeterController::class, 'meter'])->name('meter');
 Route::get('/add-meter', [MeterController::class, 'addMeter'])->name('add-meter');
 Route::post('/submit-meter', [MeterController::class, 'submitMeter'])->name('submit-meter');
 

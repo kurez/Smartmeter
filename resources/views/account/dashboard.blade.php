@@ -6,7 +6,7 @@
          <div class="token-statistics card card-token height-auto">
             <div class="card-innr">
                <div class="token-balance token-balance-with-icon">
-                  <div class="token-balance-icon"><img src="assets/images/logo-light-sm.png" alt="logo"></div>
+                  <div class="token-balance-icon"><img src="{{ asset('assets/images/logo-light-sm.png') }}" alt="logo"></div>
                   <div class="token-balance-text">
                      <h6 class="card-sub-title">Tokens Balance</h6>
                      <span class="lead">432</span>
@@ -28,7 +28,7 @@
             <div class="row no-gutters height-100">
                <div class="col-md-6 text-center">
                   <div class="token-info">
-                     <img class="token-info-icon" src="assets/images/logo-sm.png" alt="logo-sm">
+                     <img class="token-info-icon" src="{{ asset('assets/images/logo-sm.png') }}" alt="logo-sm">
                      <div class="gaps-2x"></div>
                      <h1 class="token-info-head text-light">1 Token = 25 ksh</h1>
                   </div>
@@ -40,7 +40,7 @@
                            <li><span>Total Meters:</span>{{ $meters }}</li>
                            <li><span>Active Meters:</span>0</li>
                         </ul>
-                        <a href="{{ route('meters') }}" class="btn btn-primary"><em class="fas fa-eye mr-3"></em>View Meters</a>
+                        <a href="{{ route('meters') }}" class="btn btn-secondary"><em class="fas fa-eye mr-3"></em>View Meters</a>
                         <a href="{{ url('/add-meter') }}" class="btn btn-primary"><em class="fas fa-plus mr-3"></em>Add Meter</a>
                      </div>
                   </div>

@@ -6,26 +6,6 @@
    @csrf
    <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12">
-         <label for="f_name">First Name</label>
-         <input id="token-base-amount" class="input-bordered input-with-hint" name="f_name" value="{{ old('f_name') }}" type="text">
-         <x-error for="f_name"></x-error>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
-         <label for="f_name">Last Name</label>
-         <input id="token-base-amount" class="input-bordered input-with-hint" name="l_name" {{ old('l_name') }} type="text">
-         <x-error for="l_name"></x-error>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
-         <label for="f_name">Phone Number</label>
-         <input id="token-base-amount" class="input-bordered input-with-hint" name="phone_number" value="{{ old('phone_number') }}" type="number">
-         <x-error for="phone_number"></x-error>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
-         <label for="f_name">Email</label>
-         <input id="token-base-amount" class="input-bordered input-with-hint" name="email" value="{{ old('email') }}" type="email">
-         <x-error for="email"></x-error>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
          <label for="f_name">Meter Number</label>
          <input id="token-base-amount" class="input-bordered input-with-hint" name="meter_number" value="{{ old('meter_number') }}" type="text">
          <x-error for="meter_number"></x-error>
