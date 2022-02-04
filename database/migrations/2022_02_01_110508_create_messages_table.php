@@ -15,11 +15,13 @@ class CreateMessagesTable extends Migration
    {
       Schema::create('messages', function (Blueprint $table) {
          $table->id();
-         $table->text('version');
-         $table->text('imei');
-         $table->text('iccid');
-         $table->text('address');
-         $table->bigInteger('signal');
+         $table->text('version')->nullable();
+         $table->text('imei')->nullable();
+         $table->text('iccid')->nullable();
+         $table->text('address')->nullable();
+         $table->string('status')->nullable();
+         $table->bigInteger('signal')->nullable();
+         $table->enum('type', ['ping', 'message', 'login']);
          $table->timestamps();
       });
    }

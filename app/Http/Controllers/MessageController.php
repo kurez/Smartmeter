@@ -9,19 +9,52 @@ class MessageController extends Controller
 {
    public function addMessage(Request $request)
    {
-      $message = Message::create([
-         'version' => $request->version,
-         'imei' => $request->imei,
-         'iccid' => $request->iccid,
-         'address' => $request->address,
-         'signal' => $request->signal
-      ]);
+      $topic = $request->topic;
+      switch ($topic) {
+         case '/ping':
+            $ping = Message::create([
+               'version' => $request->data["version"],
+               'imei' => $request->data{"imei"},
+               'iccid' => $request->data["iccid"],
+               'address' => $request->data{"address"},
+               'signal' => $request->data["signal"]
+            ]);
 
-      if ($message) {
-         return response()->json(['message' => $message, 'status' => 'Message saved successfully'], 200);
+            if ($ping) {
+               return response()->json(['data' => $ping, 'status' => 'Message saved successfully'], 200);
+            }
+
+            return response()->json(['status' => 'Error saving data'], 422);
+            break;
+         case '/msg':
+            $msg = Message::create([
+               'address' => $request->data["address"],
+               'status' => $request->data["status"]
+            ]);
+
+            if ($msg) {
+               return response()->json(['data' => $msg, 'status' => 'Saved successfully'], 200);
+            }
+
+            return response()->json(['status' => 'Error saving data'], 422);
+            break;
+         case '/login':
+            $login = Message::create([
+               'imei' => $request->data["imei"],
+            ]);
+
+            if ($login) {
+               return response()->json(['data' => $login, 'status' => 'Saved successfully'], 200);
+            }
+
+            return response()->json(['status' => 'Error saving data'], 422);
+            break;
+
+         default:
+            return response()->json(['status' => 'Error in the data sent'], 422);
+            break;
       }
 
-      return response()->json(['status' => 'Error saving message'], 422);
    }
 
    public function allMessages()
@@ -31,3 +64,5 @@ class MessageController extends Controller
       return response()->json(['messages' => $messages], 200);
    }
 }
+
+
