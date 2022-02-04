@@ -15,6 +15,7 @@ class AddBalanceToMetersTable extends Migration
     {
         Schema::table('meters', function (Blueprint $table) {
            $table->string('mode')->nullable();
+           $table->string('status')->default("off")->nullable();
             $table->bigInteger('balance')->default(0)->nullable();
         });
     }
