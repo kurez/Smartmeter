@@ -19,5 +19,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// messages
 Route::post('/message/add', [MessageController::class, 'addMessage']);
 Route::get('/messages/all', [MessageController::class, 'allMessages']);
+
+// balance
+Route::post('/meter/balance/callback', [MeterController::class, 'meterBalanceCallBack']);
+
+// power
+Route::post('/meter/power/callback', [MeterController::class, 'powerMeterCallBack']);
+
+// recharge
+Route::post('/meter/recharge/callback', [MeterController::class, 'rechargeMeterCallBack']);

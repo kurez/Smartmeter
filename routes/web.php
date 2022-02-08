@@ -27,6 +27,9 @@ Route::get('/meters', [MeterController::class, 'meters'])->name('meters');
 Route::get('/meter/{meter}', [MeterController::class, 'meter'])->name('meter');
 Route::get('/add-meter', [MeterController::class, 'addMeter'])->name('add-meter');
 Route::post('/submit-meter', [MeterController::class, 'submitMeter'])->name('submit-meter');
+Route::post('/recharge-meter', [MeterController::class, 'rechargeMeter'])->name('recharge-meter');
+// Power-test 
+// Route::get('/power-meter/{address}/{imei}/{status}', [MeterController::class, 'powerMeter'])->name('power-meter');
 
 // Transactions
 Route::get('/transactions', [AppController::class, 'transactions'])->name('transactions.all');

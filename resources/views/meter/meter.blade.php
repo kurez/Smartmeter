@@ -30,11 +30,16 @@
       </div>
       <div class="col-xl-4 col-lg-5">
          <div class="token-calculator card card-full-height">
+         <form action="{{ route('recharge-meter') }}" method="post">
+            @csrf
             <div class="card-innr">
                <div class="card-head"><h4 class="card-title">Buy Token</h4><p class="card-title-text">Enter amount.</p></div>
                <div class="token-calc">
                   <div class="token-pay-amount">
-                     <input id="token-base-amount" class="input-bordered input-with-hint" type="text" value="1">
+                     <!-- <input id="address" class="input-bordered input-with-hint" name="address" type="hidden" value="{{ $meter->address }}"> -->
+                     <input id="imei" class="input-bordered input-with-hint" name="imei" type="hidden" value="{{ $meter->imei }}">  
+                     <input id="address" class="input-bordered input-with-hint" name="address" type="hidden" value="{{ $meter->address }}">
+                     <input id="token-base-amount" class="input-bordered input-with-hint" name="amount" type="number" value="0">
                   </div>
                   <div class="token-received"><div class="token-eq-sign">=</div><div class="token-received-amount"><h5 class="token-amount">184</h5><div class="token-symbol">Tokens</div></div></div>
                </div>
@@ -42,8 +47,10 @@
                   <em class="fas fa-info-circle text-light"></em>
                   <span class="note-text text-light">Tokens calculated based current tokens price (25 ksh)</span>
                </div>
-               <div class="token-buy"><a href="#" class="btn btn-primary">Buy Tokens</a></div>
+               <div class="token-buy"><button type="submit" class="btn btn-primary">Buy Tokens</button></div>
+
             </div>
+            </form>
          </div>
       </div>
    </div>

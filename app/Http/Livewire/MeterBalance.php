@@ -11,13 +11,15 @@ class MeterBalance extends Component
 
    public function getBalance()
    {
-      $response = Http::post(config('services.niot.api_url'), [
-         'address' => $this->meter->address,
+      $response = Http::post('http://pl.numeraliot.com:8010/meter/balance', [
+         // 'address' => '02 00 09 21 20 00',
+         'address' => trim($this->meter->address),
          'imei' => $this->meter->imei,
-         'mode' => 'prepaid'
-      ]);
+         'mode' => 'prepaid',
+     ]);
 
-      dd(json_decode($response));
+     return $response;
+
    }
 
    public function render()

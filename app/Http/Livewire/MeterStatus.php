@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Illuminate\Support\Facades\Http;
 use Livewire\Component;
+use DB;
 
 class MeterStatus extends Component
 {
@@ -11,13 +12,36 @@ class MeterStatus extends Component
 
    public function changeStatus()
    {
-      $status = Http::post(config('services.niot.api_url'), [
-         'address' => $this->meter->address,
-         'imei' => $this->meter->imei,
-         'status' => $this->meter->status == 'on' ? 'off' : 'on'
-      ]);
+    
+      if ($this->meter->status == 'off')
+      {
+         $response = Http::post('http://pl.numeraliot.com:8010/meter/power', [
+            // 'address' => '020009212000',
+            'address' => trim($this->meter->address), 
+            'imei' => $this->meter->imei,
+            'status' => 'on'
+        ]);
+   
+        DB::table('meters')
+               ->where('address', trim($this->meter->address))
+               ->update(['status' => 'on']);
+      }
+      else 
+      {
+         $response = Http::post('http://pl.numeraliot.com:8010/meter/power', [
+            // 'address' => '020009212000',
+            'address' => trim($this->meter->address),
+            'imei' => $this->meter->imei,
+            'status' => 'off'
+        ]);
+   
+        DB::table('meters')
+               ->where('address', trim($this->meter->address))
+               ->update(['status' => 'off']);
+      }
 
-      dd(json_decode($status));
+      return $response;
+   
    }
    public function render()
    {
