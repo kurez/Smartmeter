@@ -28,6 +28,19 @@
             </div>
          </div>
       </div>
+      <div class="col-lg-4">
+         <div class="token-statistics card card-token height-auto">
+            <div class="card-innr">
+               <div class="token-balance token-balance-with-icon">
+                  <div class="token-balance-icon"><img src="{{ asset('assets/images/logo-light-sm.png') }}" alt="logo"></div>
+                  <div class="token-balance-text">
+                     <h6 class="card-sub-title">Meter Mode</h6>
+                     <livewire:meter-mode :meter="$meter" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
       <div class="col-xl-4 col-lg-5">
          <div class="token-calculator card card-full-height">
          <form action="{{ route('recharge-meter') }}" method="post">

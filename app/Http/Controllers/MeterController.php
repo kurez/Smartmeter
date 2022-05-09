@@ -53,21 +53,6 @@ class MeterController extends Controller
       return redirect()->route('meter', $meter)->with('success', 'Meter added successfully');
    }
 
-   // meter balance callback
-   public function meterBalanceCallBack (Request $request) 
-   {
-      // ... add logic here
-      return $request->all();
-   }
-
-   // meter power callback
-   public function powerMeterCallBack (Request $request) 
-   {
-       // ... add logic here
-       return $request->all();
-   }
-
-
    // meter recharge
    public function rechargeMeter (Request $request) 
    {
@@ -89,16 +74,66 @@ class MeterController extends Controller
       
       return $response;
 
-
-
    }
 
-   // meter recharge callback
-   public function rechargeMeterCallBack (Request $request) 
+   public function balanceCallBack(Request $request)
    {
+      $topic = $request->topic;
+      switch ($topic) {
+         
+            // receives all messages from device ( balance/mode)
+         case '/msg':
+            $msg = Message::create([
+               'address' => $request->data['address'],
+               'balance' => $request->data['balance']
+            ]);
 
-      // ... add logic here
-       return $request->all();
+            $current_bal = DB::select('select balance from meters where address = :address', ['address' => $request->data['address'] ]);
+            $amount = $request->input('amount');
+            $new_bal = $current_bal[0]->balance + $amount;
+
+            DB::table('meters')
+               ->where('address', $request->data['address'])
+               ->update(['balance' => $new_bal]);
+
+            if ($msg) {
+               return response()->json(['data' => $msg, 'status' => 'Saved successfully'], 200);
+            }
+
+            return response()->json(['status' => 'Error saving data'], 422);
+            break;
+
+         default:
+            return response()->json(['status' => 'Error in the data sent'], 422);
+            break;
+      }
+
    }
+
+   public function powerCallBack(Request $request)
+   {
+      $topic = $request->topic;
+      switch ($topic) {
+         
+         case '/msg':
+            $msg = Message::create([
+               'address' => $request->data['address'],
+               'status' => $request->data['status']
+            ]);
+
+            if ($msg) {
+               return response()->json(['data' => $msg, 'status' => 'Saved successfully'], 200);
+            }
+
+            return response()->json(['status' => 'Error saving data'], 422);
+            break;
+
+         default:
+            return response()->json(['status' => 'Error in the data sent'], 422);
+            break;
+      }
+
+   }
+
 
 }

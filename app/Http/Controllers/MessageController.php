@@ -13,11 +13,11 @@ class MessageController extends Controller
       switch ($topic) {
          case '/ping':
             $ping = Message::create([
-               'version' => $request->data["version"],
-               'imei' => $request->data{"imei"},
-               'iccid' => $request->data["iccid"],
-               'address' => $request->data{"address"},
-               'signal' => $request->data["signal"]
+               'version' => $request->data['version'],
+               'imei' => $request->data['imei'],
+               'iccid' => $request->data['iccid'],
+               'address' => $request->data['address'],
+               'signal' => $request->data['signal']
             ]);
 
             if ($ping) {
@@ -26,10 +26,11 @@ class MessageController extends Controller
 
             return response()->json(['status' => 'Error saving data'], 422);
             break;
+            // receives all messages from device ( balance/mode)
          case '/msg':
             $msg = Message::create([
-               'address' => $request->data["address"],
-               'status' => $request->data["status"]
+               'address' => $request->data['address'],
+               'status' => $request->data['status']
             ]);
 
             if ($msg) {
@@ -40,7 +41,7 @@ class MessageController extends Controller
             break;
          case '/login':
             $login = Message::create([
-               'imei' => $request->data["imei"],
+               'imei' => $request->data['imei'],
             ]);
 
             if ($login) {
